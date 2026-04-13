@@ -1,35 +1,30 @@
 name: Sync Upstream
-
 on:
   schedule:
     - cron: '0 0 * * *' 
   workflow_dispatch:   
-
 jobs:
   sync_upstream:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # 升级到 v4 以支持 Node 24
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }} # 显式传递权限
-
-      - name: Sync with Upstream
+          # 显式使用默认 token，避免权限解析失效
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Force Sync with Upstream
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          
-          # 检查是否已添加过 upstream，防止报错 128
-          git remote add upstream https://github.com || git remote set-url upstream https://github.com
-          
-          git fetch upstream
+          # 1. 添加上游仓库
+          git remote add upstream https://github.com || true          
+          # 2. 获取上游最新代码
+          git fetch upstream main          
+          # 3. 强行将你的 main 分支重置为上游的状态（注意：这会覆盖你本地的改动）
           git checkout main
-          
-          # 使用 rebase 或 merge 保持同步
-          git merge upstream/main --allow-unrelated-histories -m "Automatically synced from upstream"
-          
-          # 推送更新
-          git push origin main
+          git reset --hard upstream/main          
+          # 4. 强行推送到你的仓库
+          git push origin main --force
 
 # 2026.4.13 加入自动更新功能  By Flye
