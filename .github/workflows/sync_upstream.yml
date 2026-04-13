@@ -1,0 +1,27 @@
+name: Sync Upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天北京时间早上 8 点自动执行
+  workflow_dispatch:   # 允许你手动点击按钮触发同步
+
+jobs:
+  sync_upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Sync with Upstream
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          # 添加原作者仓库为上游地址
+          git remote add upstream https://github.com
+          git fetch upstream
+          # 强行合并上游主分支到你的主分支
+          git checkout main
+          git merge upstream/main --allow-unrelated-histories
+          git push origin main
