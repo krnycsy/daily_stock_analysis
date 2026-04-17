@@ -312,7 +312,7 @@ jobs:
           fi
 
       
-      - name: 上传分析报告
+      - name: Commit and push reports
       if: success()
       run: |
         git config --global user.name "github-actions[bot]"
