@@ -316,7 +316,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@://github.com"
-          git add reports/ logs/
+          git add -f reports/ logs/
           git commit -m "Auto update analysis report $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
           
