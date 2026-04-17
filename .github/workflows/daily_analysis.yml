@@ -310,7 +310,7 @@ jobs:
             echo "📜 最近日志（最后 30 行）:"
             tail -30 logs/stock_analysis_*.log 2>/dev/null || echo "无日志"
           fi
-      
+          
       - name: Commit and push reports
         if: success()
         run: |
@@ -319,9 +319,4 @@ jobs:
           git add reports/ logs/
           git commit -m "Auto update analysis report $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
-
-            
-      
-      
-        git commit -m "Auto update analysis report $(date +'%Y-%m-%d')" || echo "No changes to commit"
-        git push
+          
