@@ -310,14 +310,18 @@ jobs:
             echo "📜 最近日志（最后 30 行）:"
             tail -30 logs/stock_analysis_*.log 2>/dev/null || echo "无日志"
           fi
-
       
       - name: Commit and push reports
-      if: success()
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@://github.com"
-        git add reports/
-        # 如果没有新文件产生的容错处理
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@://github.com"
+          git add reports/ logs/
+          git commit -m "Auto update analysis report $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
+
+            
+      
+      
         git commit -m "Auto update analysis report $(date +'%Y-%m-%d')" || echo "No changes to commit"
         git push
