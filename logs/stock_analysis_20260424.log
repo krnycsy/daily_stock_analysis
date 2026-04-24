@@ -1,0 +1,253 @@
+2026-04-24 10:59:10 | INFO     | src/logging_config.py:153 | 日志系统初始化完成，日志目录: logs
+2026-04-24 10:59:10 | INFO     | src/logging_config.py:154 | 常规日志: logs/stock_analysis_20260424.log
+2026-04-24 10:59:10 | INFO     | src/logging_config.py:155 | 调试日志: logs/stock_analysis_debug_20260424.log
+2026-04-24 10:59:10 | INFO     | main.py:741 | ============================================================
+2026-04-24 10:59:10 | INFO     | main.py:742 | A股自选股智能分析系统 启动
+2026-04-24 10:59:10 | INFO     | main.py:743 | 运行时间: 2026-04-24 10:59:10
+2026-04-24 10:59:10 | INFO     | main.py:744 | ============================================================
+2026-04-24 10:59:10 | WARNING  | main.py:749 | 未配置 Tushare Token，将使用其他数据源
+2026-04-24 10:59:10 | WARNING  | main.py:749 | 未配置通知渠道，将不发送推送通知
+2026-04-24 10:59:14 | INFO     | src/storage.py:696 | 数据库初始化完成: sqlite:////home/runner/work/daily_stock_analysis/daily_stock_analysis/data/stock_analysis.db
+2026-04-24 10:59:14 | WARNING  | data_provider/tushare_fetcher.py:164 | Tushare Token 未配置，此数据源不可用
+2026-04-24 10:59:14 | INFO     | data_provider/base.py:893 | 已初始化 7 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), TushareFetcher(P2), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4), LongbridgeFetcher(P5)
+2026-04-24 10:59:14 | INFO     | src/analyzer.py:989 | Analyzer LLM: litellm initialized (model=gemini/gemini-3-flash-preview)
+2026-04-24 10:59:14 | WARNING  | src/notification.py:169 | 未配置有效的通知渠道，将不发送推送通知
+2026-04-24 10:59:14 | INFO     | src/search_service.py:2202 | 已启用 SearXNG 公共实例自动发现模式
+2026-04-24 10:59:14 | INFO     | src/search_service.py:2218 | 新闻时效策略已启用: profile=short, profile_days=3, NEWS_MAX_AGE_DAYS=3, effective_window=3
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:123 | 调度器初始化完成，最大并发数: 1
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:124 | 已启用技术分析引擎（均线/趋势/量价指标）
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:127 | 实时行情已启用 (优先级: tencent,akshare_sina,efinance,akshare_em)
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:133 | 筹码分布分析已禁用
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:137 | 搜索服务已启用
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:1292 | ===== 开始分析 1 只股票 =====
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:1293 | 股票列表: 600519
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:1294 | 并发数: 1, 模式: 完整分析
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:1208 | ========== 开始处理 600519 ==========
+2026-04-24 10:59:14 | INFO     | src/core/pipeline.py:218 | 贵州茅台(600519) 开始从数据源获取数据...
+2026-04-24 10:59:14 | INFO     | data_provider/base.py:1001 | [数据源尝试 1/7] [EfinanceFetcher] 获取 600519...
+2026-04-24 10:59:14 | INFO     | data_provider/base.py:364 | [EfinanceFetcher] 开始获取 600519 日线数据: 范围=2026-02-23 ~ 2026-04-24
+2026-04-24 10:59:17 | INFO     | data_provider/efinance_fetcher.py:389 | [API调用] ef.stock.get_quote_history(stock_codes=600519, beg=20260223, end=20260424, klt=101, fqt=1)
+2026-04-24 10:59:19 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:868 | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1
+2026-04-24 10:59:20 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:868 | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1
+2026-04-24 10:59:21 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:868 | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1
+2026-04-24 10:59:22 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:868 | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1
+2026-04-24 10:59:23 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:868 | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1
+2026-04-24 10:59:23 | ERROR    | data_provider/efinance_fetcher.py:443 | Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600519, market_type=stock, range=20260223~20260424, category=remote_disconnect, error_type=ConnectionError, elapsed=6.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-04-24 10:59:23 | ERROR    | data_provider/base.py:392 | [EfinanceFetcher] 600519 获取失败: 范围=2026-02-23 ~ 2026-04-24, error_type=ProtocolError, elapsed=9.01s, reason=efinance 获取数据失败: Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600519, market_type=stock, range=20260223~20260424, category=remote_disconnect, error_type=ConnectionError, elapsed=6.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-04-24 10:59:23 | WARNING  | data_provider/base.py:1022 | [数据源失败 1/7] [EfinanceFetcher] 600519: error_type=ProtocolError, reason=[EfinanceFetcher] 600519: efinance 获取数据失败: Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600519, market_type=stock, range=20260223~20260424, category=remote_disconnect, error_type=ConnectionError, elapsed=6.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260223&end=20260424&rtntype=6&secid=1.600519&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-04-24 10:59:23 | INFO     | data_provider/base.py:1029 | [数据源切换] 600519: [EfinanceFetcher] -> [AkshareFetcher]
+2026-04-24 10:59:23 | INFO     | data_provider/base.py:1001 | [数据源尝试 2/7] [AkshareFetcher] 获取 600519...
+2026-04-24 10:59:23 | INFO     | data_provider/base.py:364 | [AkshareFetcher] 开始获取 600519 日线数据: 范围=2026-02-23 ~ 2026-04-24
+2026-04-24 10:59:23 | INFO     | data_provider/akshare_fetcher.py:379 | [数据源] 尝试使用 东方财富 获取 600519...
+2026-04-24 10:59:27 | INFO     | data_provider/akshare_fetcher.py:406 | [API调用] ak.stock_zh_a_hist(symbol=600519, ...)
+2026-04-24 10:59:28 | WARNING  | data_provider/akshare_fetcher.py:387 | [数据源] 东方财富 获取失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-24 10:59:28 | INFO     | data_provider/akshare_fetcher.py:379 | [数据源] 尝试使用 新浪财经 获取 600519...
+2026-04-24 10:59:34 | INFO     | data_provider/akshare_fetcher.py:383 | [数据源] 新浪财经 获取成功
+2026-04-24 10:59:34 | INFO     | data_provider/base.py:383 | [AkshareFetcher] 600519 获取成功: 范围=2026-02-23 ~ 2026-04-24, rows=43, elapsed=10.73s
+2026-04-24 10:59:34 | INFO     | data_provider/base.py:1013 | [数据源完成] 600519 使用 [AkshareFetcher] 获取成功: rows=43, elapsed=19.74s
+2026-04-24 10:59:34 | INFO     | src/storage.py:1565 | 保存 600519 数据成功，新增 43 条
+2026-04-24 10:59:34 | INFO     | src/core/pipeline.py:226 | 贵州茅台(600519) 数据保存成功（来源: AkshareFetcher，新增 43 条）
+2026-04-24 10:59:34 | INFO     | data_provider/akshare_fetcher.py:1099 | [API调用] 腾讯财经接口获取 600519 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600519
+2026-04-24 10:59:38 | INFO     | data_provider/akshare_fetcher.py:1204 | [实时行情-腾讯] 600519 贵州茅台: endpoint=qt.gtimg.cn/q, 价格=1458.49, 涨跌=2.78%, 量比=1.26, 换手率=0.44%, elapsed=4.17s
+2026-04-24 10:59:38 | INFO     | data_provider/base.py:1255 | [实时行情] 600519 成功获取 (来源: tencent)
+2026-04-24 10:59:38 | INFO     | src/core/pipeline.py:273 | 贵州茅台(600519) 实时行情: 价格=1458.49, 量比=1.26, 换手率=0.44% (来源: tencent)
+2026-04-24 10:59:38 | INFO     | data_provider/akshare_fetcher.py:1099 | [API调用] 腾讯财经接口获取 600519 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600519
+2026-04-24 10:59:42 | INFO     | data_provider/efinance_fetcher.py:1101 | [API调用] ef.stock.get_belong_board(stock_code=600519) 获取所属板块...
+2026-04-24 10:59:44 | INFO     | data_provider/akshare_fetcher.py:1204 | [实时行情-腾讯] 600519 贵州茅台: endpoint=qt.gtimg.cn/q, 价格=1458.49, 涨跌=2.78%, 量比=1.26, 换手率=0.44%, elapsed=5.65s
+2026-04-24 10:59:44 | INFO     | data_provider/base.py:1255 | [实时行情] 600519 成功获取 (来源: tencent)
+2026-04-24 10:59:45 | INFO     | data_provider/efinance_fetcher.py:1110 | [API返回] ef.stock.get_belong_board 成功: 返回 28 个板块, 耗时 2.59s
+2026-04-24 10:59:45 | INFO     | data_provider/base.py:1527 | [EfinanceFetcher] 获取所属板块成功: 600519, count=28
+2026-04-24 10:59:45 | INFO     | src/core/pipeline.py:357 | 贵州茅台(600519) 趋势分析: 空头排列, 买入信号=观望, 评分=40
+2026-04-24 10:59:45 | INFO     | src/core/pipeline.py:380 | 贵州茅台(600519) 开始多维度情报搜索...
+2026-04-24 10:59:45 | INFO     | src/search_service.py:3093 | 开始多维度情报搜索: 贵州茅台(600519), 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3), 目标条数=3, provider请求条数=6
+2026-04-24 10:59:45 | INFO     | src/search_service.py:3122 | [情报搜索] 最新消息: 使用 SearXNG
+2026-04-24 10:59:46 | INFO     | src/search_service.py:1841 | [SearXNG] 已刷新公共实例池，共 20 个候选实例
+2026-04-24 10:59:46 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.rhscz.eu 搜索失败: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>429 Too Many Requests</title>
+</head><body>
+<h1>Too Many Requests</h1>
+<p>The user has sent too many requests
+in a given amount o
+2026-04-24 10:59:47 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.rhscz.eu 搜索失败: Too Many Requests
+2026-04-24 10:59:47 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.namejeff.xyz 搜索失败: Too Many Requests
+2026-04-24 10:59:47 | WARNING  | src/search_service.py:3160 | [情报搜索] 最新消息: 搜索失败 - https://search.rhscz.eu: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>429 Too Many Requests</title>
+</head><body>
+<h1>Too Many Requests</h1>
+<p>The user has sent too many requests
+in a given amount o；https://searx.rhscz.eu: Too Many Requests；https://searx.namejeff.xyz: Too Many Requests
+2026-04-24 10:59:47 | INFO     | src/search_service.py:3122 | [情报搜索] 机构分析: 使用 SearXNG
+2026-04-24 10:59:48 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.rhscz.eu 搜索失败: Too Many Requests
+2026-04-24 10:59:48 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.namejeff.xyz 搜索失败: Too Many Requests
+2026-04-24 10:59:49 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-04-24 10:59:49 | WARNING  | src/search_service.py:3160 | [情报搜索] 机构分析: 搜索失败 - https://searx.rhscz.eu: Too Many Requests；https://searx.namejeff.xyz: Too Many Requests；https://searx.tiekoetter.com: Too Many Requests
+2026-04-24 10:59:49 | INFO     | src/search_service.py:3122 | [情报搜索] 风险排查: 使用 SearXNG
+2026-04-24 10:59:49 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.namejeff.xyz 搜索失败: Too Many Requests
+2026-04-24 10:59:50 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-04-24 10:59:50 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.mdosch.de 搜索失败: Too Many Requests
+2026-04-24 10:59:50 | WARNING  | src/search_service.py:3160 | [情报搜索] 风险排查: 搜索失败 - https://searx.namejeff.xyz: Too Many Requests；https://searx.tiekoetter.com: Too Many Requests；https://search.mdosch.de: Too Many Requests
+2026-04-24 10:59:51 | INFO     | src/search_service.py:3122 | [情报搜索] 公司公告: 使用 SearXNG
+2026-04-24 10:59:51 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-04-24 10:59:51 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.mdosch.de 搜索失败: Too Many Requests
+2026-04-24 10:59:52 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.zina.dev 搜索失败: Too Many Requests
+2026-04-24 10:59:52 | WARNING  | src/search_service.py:3160 | [情报搜索] 公司公告: 搜索失败 - https://searx.tiekoetter.com: Too Many Requests；https://search.mdosch.de: Too Many Requests；https://search.zina.dev: Too Many Requests
+2026-04-24 10:59:52 | INFO     | src/search_service.py:3122 | [情报搜索] 业绩预期: 使用 SearXNG
+2026-04-24 10:59:52 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.mdosch.de 搜索失败: Too Many Requests
+2026-04-24 10:59:53 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.zina.dev 搜索失败: Too Many Requests
+2026-04-24 10:59:53 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.bladerunn.in 搜索失败: Too Many Requests
+2026-04-24 10:59:53 | WARNING  | src/search_service.py:3160 | [情报搜索] 业绩预期: 搜索失败 - https://search.mdosch.de: Too Many Requests；https://search.zina.dev: Too Many Requests；https://search.bladerunn.in: Too Many Requests
+2026-04-24 10:59:54 | INFO     | src/core/pipeline.py:395 | 贵州茅台(600519) 情报搜索完成: 共 0 条结果
+2026-04-24 10:59:54 | INFO     | src/agent/skills/base.py:360 | Loaded 11 built-in skills from /home/runner/work/daily_stock_analysis/daily_stock_analysis/strategies
+2026-04-24 10:59:54 | INFO     | src/agent/factory.py:213 | [AgentFactory] SkillManager prototype cached (11 skills)
+2026-04-24 10:59:54 | INFO     | src/agent/skills/base.py:431 | Activated skills: ['bull_trend']
+2026-04-24 10:59:54 | INFO     | src/agent/factory.py:257 | [AgentFactory] Activated skills: ['bull_trend']
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1344 | ========== AI 分析 贵州茅台(600519) ==========
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1345 | [LLM配置] 模型: gemini/gemini-3-flash-preview
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1346 | [LLM配置] Prompt 长度: 2695 字符
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1347 | [LLM配置] 是否包含新闻: 是
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1351 | [LLM Prompt 预览]
+# 决策仪表盘分析请求
+
+## 📊 股票基础信息
+| 项目 | 数据 |
+|------|------|
+| 股票代码 | **600519** |
+| 股票名称 | **贵州茅台** |
+| 分析日期 | 2026-04-24 |
+
+---
+
+## 📈 技术面数据
+
+### 今日行情
+| 指标 | 数值 |
+|------|------|
+| 收盘价 | 1458.49 元 |
+| 开盘价 | 1413.1 元 |
+| 最高价 | 1458.88 元 |
+| 最低价 | 1413.1 元 |
+| 涨跌幅 | 2.78% |
+| 成交量 | 554.55 万股 |
+| 成交额 | 80.03 亿元 |
+
+### 均线系统（关键判断指标）
+| 均线 | 数值 | 说明 |
+|------|------|------|
+| MA5 | 1421.978 | 短期趋势线 |
+| MA10 | 1433.768 | 中短期趋势线 |
+| MA20 | 1441.1254999999999 | 中期趋势线 |
+| 均线形态 | 震荡整理 ↔️ | 多头/空头/缠绕 |
+
+### 实时行情增强数据...
+2026-04-24 10:59:57 | INFO     | src/analyzer.py:1360 | [LLM调用] 开始调用 gemini/gemini-3-flash-preview...
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:3995 | 
+LiteLLM completion() model= gemini-3-flash-preview; provider = gemini
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py:1009 | Warning: Setting temperature < 1.0 for Gemini 3 models (gemini-3-flash-preview) can cause infinite loops, degraded reasoning performance, and failure on complex tasks. Strongly recommended to use temperature = 1.0 (default).
+2026-04-24 10:59:57 | WARNING  | src/analyzer.py:1201 | [LiteLLM] gemini/gemini-3-flash-preview stream unavailable before first chunk, falling back to non-stream: gemini/gemini-3-flash-preview stream interrupted: litellm.MidStreamFallbackError: litellm.RateLimitError: litellm.RateLimitError: Vertex_ai_betaException - b'{\n  "error": {\n    "code": 429,\n    "message": "Resource has been exhausted (e.g. check quota).",\n    "status": "RESOURCE_EXHAUSTED"\n  }\n}\n' Original exception: RateLimitError: litellm.RateLimitError: litellm.RateLimitError: Vertex_ai_betaException - b'{\n  "error": {\n    "code": 429,\n    "message": "Resource has been exhausted (e.g. check quota).",\n    "status": "RESOURCE_EXHAUSTED"\n  }\n}\n'
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:3995 | 
+LiteLLM completion() model= gemini-3-flash-preview; provider = gemini
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py:1009 | Warning: Setting temperature < 1.0 for Gemini 3 models (gemini-3-flash-preview) can cause infinite loops, degraded reasoning performance, and failure on complex tasks. Strongly recommended to use temperature = 1.0 (default).
+2026-04-24 10:59:57 | WARNING  | src/analyzer.py:1228 | [LiteLLM] gemini/gemini-3-flash-preview failed: litellm.RateLimitError: litellm.RateLimitError: GeminiException - {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:3995 | 
+LiteLLM completion() model= gemini-2.5-flash; provider = gemini
+2026-04-24 10:59:57 | WARNING  | src/analyzer.py:1201 | [LiteLLM] gemini/gemini-2.5-flash stream unavailable before first chunk, falling back to non-stream: gemini/gemini-2.5-flash stream interrupted: litellm.MidStreamFallbackError: litellm.RateLimitError: litellm.RateLimitError: Vertex_ai_betaException - b'{\n  "error": {\n    "code": 429,\n    "message": "Resource has been exhausted (e.g. check quota).",\n    "status": "RESOURCE_EXHAUSTED"\n  }\n}\n' Original exception: RateLimitError: litellm.RateLimitError: litellm.RateLimitError: Vertex_ai_betaException - b'{\n  "error": {\n    "code": 429,\n    "message": "Resource has been exhausted (e.g. check quota).",\n    "status": "RESOURCE_EXHAUSTED"\n  }\n}\n'
+2026-04-24 10:59:57 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:3995 | 
+LiteLLM completion() model= gemini-2.5-flash; provider = gemini
+2026-04-24 10:59:58 | WARNING  | src/analyzer.py:1228 | [LiteLLM] gemini/gemini-2.5-flash failed: litellm.RateLimitError: litellm.RateLimitError: GeminiException - {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+2026-04-24 10:59:58 | ERROR    | src/analyzer.py:1439 | AI 分析 贵州茅台(600519) 失败: All LLM models failed (tried 2 model(s)). Last error: litellm.RateLimitError: litellm.RateLimitError: GeminiException - {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+2026-04-24 10:59:58 | INFO     | src/analyzer.py:267 | [price_position] Filled placeholder fields from computed data
+2026-04-24 10:59:58 | WARNING  | src/core/pipeline.py:1245 | [600519] 分析未成功: All LLM models failed (tried 2 model(s)). Last error: litellm.RateLimitError: litellm.RateLimitError: GeminiException - {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+2026-04-24 10:59:58 | WARNING  | src/core/pipeline.py:1363 | [600519] 分析结果标记为失败，不计入汇总: All LLM models failed (tried 2 model(s)). Last error: litellm.RateLimitError: litellm.RateLimitError: GeminiException - {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+2026-04-24 10:59:58 | INFO     | src/core/pipeline.py:1401 | ===== 分析完成 =====
+2026-04-24 10:59:58 | INFO     | src/core/pipeline.py:1402 | 成功: 0, 失败: 1, 耗时: 43.38 秒
+2026-04-24 10:59:58 | INFO     | src/core/market_review.py:69 | 开始执行大盘复盘分析...
+2026-04-24 10:59:58 | WARNING  | data_provider/tushare_fetcher.py:164 | Tushare Token 未配置，此数据源不可用
+2026-04-24 10:59:58 | INFO     | data_provider/base.py:893 | 已初始化 7 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), TushareFetcher(P2), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4), LongbridgeFetcher(P5)
+2026-04-24 10:59:58 | INFO     | src/market_analyzer.py:877 | ========== 开始大盘复盘分析 ==========
+2026-04-24 10:59:58 | INFO     | src/market_analyzer.py:270 | [大盘] 获取主要指数实时行情...
+2026-04-24 11:00:00 | INFO     | data_provider/efinance_fetcher.py:821 | [API调用] ef.stock.get_realtime_quotes(['沪深系列指数']) 获取指数行情...
+2026-04-24 11:00:01 | ERROR    | data_provider/efinance_fetcher.py:874 | [efinance] 获取指数行情失败: Expecting value: line 1 column 1 (char 0)
+2026-04-24 11:00:11 | INFO     | data_provider/base.py:1639 | [AkshareFetcher] 获取指数行情成功
+2026-04-24 11:00:11 | INFO     | src/market_analyzer.py:296 | [大盘] 获取到 6 个指数行情
+2026-04-24 11:00:11 | INFO     | src/market_analyzer.py:306 | [大盘] 获取市场涨跌统计...
+2026-04-24 11:00:12 | INFO     | data_provider/efinance_fetcher.py:894 | [API调用] ef.stock.get_realtime_quotes() 获取市场统计...
+2026-04-24 11:00:16 | ERROR    | data_provider/efinance_fetcher.py:905 | [efinance] 获取市场统计失败: Expecting value: line 1 column 1 (char 0)
+2026-04-24 11:00:20 | INFO     | data_provider/akshare_fetcher.py:1638 | [API调用] ak.stock_zh_a_spot_em() 获取市场统计...
+2026-04-24 11:03:34 | INFO     | data_provider/base.py:1662 | [AkshareFetcher] 获取市场统计成功
+2026-04-24 11:03:34 | INFO     | src/market_analyzer.py:318 | [大盘] 涨:2036 跌:3352 平:109 涨停:68 跌停:40 成交额:26576亿
+2026-04-24 11:03:34 | INFO     | src/market_analyzer.py:328 | [大盘] 获取板块涨跌榜...
+2026-04-24 11:03:37 | INFO     | data_provider/efinance_fetcher.py:1007 | [API调用] ef.stock.get_realtime_quotes(['行业板块']) 获取板块行情...
+2026-04-24 11:03:38 | ERROR    | data_provider/efinance_fetcher.py:1033 | [efinance] 获取板块排行失败: Expecting value: line 1 column 1 (char 0)
+2026-04-24 11:03:43 | INFO     | data_provider/akshare_fetcher.py:1781 | [API调用] ak.stock_board_industry_name_em() 获取板块排行...
+2026-04-24 11:03:59 | INFO     | data_provider/base.py:2465 | [AkshareFetcher] 获取板块排行成功
+2026-04-24 11:03:59 | INFO     | src/market_analyzer.py:336 | [大盘] 领涨板块: ['锂', '能源金属', '运动服装', '钴', '镍']
+2026-04-24 11:03:59 | INFO     | src/market_analyzer.py:337 | [大盘] 领跌板块: ['航天装备Ⅲ', '航天装备Ⅱ', '宠物食品', '综合电力设备商', '水力发电']
+2026-04-24 11:03:59 | INFO     | src/market_analyzer.py:380 | [大盘] 开始搜索市场新闻...
+2026-04-24 11:03:59 | INFO     | src/search_service.py:2758 | 搜索股票新闻: 大盘(market), query='A股 大盘 复盘', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-04-24 11:04:00 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.zina.dev 搜索失败: Too Many Requests
+2026-04-24 11:04:00 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.bladerunn.in 搜索失败: Too Many Requests
+2026-04-24 11:04:01 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.hbubli.cc 搜索失败: 响应JSON解析失败
+2026-04-24 11:04:01 | WARNING  | src/search_service.py:2874 | SearXNG 搜索失败: https://search.zina.dev: Too Many Requests；https://search.bladerunn.in: Too Many Requests；https://search.hbubli.cc: 响应JSON解析失败，尝试下一个引擎
+2026-04-24 11:04:01 | INFO     | src/search_service.py:2758 | 搜索股票新闻: 大盘(market), query='股市 行情 分析', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-04-24 11:04:01 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.bladerunn.in 搜索失败: Too Many Requests
+2026-04-24 11:04:01 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.hbubli.cc 搜索失败: 响应JSON解析失败
+2026-04-24 11:04:02 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.internetsucks.net 搜索失败: Too Many Requests
+2026-04-24 11:04:02 | WARNING  | src/search_service.py:2874 | SearXNG 搜索失败: https://search.bladerunn.in: Too Many Requests；https://search.hbubli.cc: 响应JSON解析失败；https://search.internetsucks.net: Too Many Requests，尝试下一个引擎
+2026-04-24 11:04:02 | INFO     | src/search_service.py:2758 | 搜索股票新闻: 大盘(market), query='A股 市场 热点 板块', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-04-24 11:04:02 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.hbubli.cc 搜索失败: 响应JSON解析失败
+2026-04-24 11:04:03 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://search.internetsucks.net 搜索失败: Too Many Requests
+2026-04-24 11:04:03 | WARNING  | src/search_service.py:2072 | [SearXNG] 实例 https://etsi.me 搜索失败: Too Many Requests
+2026-04-24 11:04:03 | WARNING  | src/search_service.py:2874 | SearXNG 搜索失败: https://search.hbubli.cc: 响应JSON解析失败；https://search.internetsucks.net: Too Many Requests；https://etsi.me: Too Many Requests，尝试下一个引擎
+2026-04-24 11:04:03 | INFO     | src/market_analyzer.py:395 | [大盘] 共获取 0 条市场新闻
+2026-04-24 11:04:03 | INFO     | src/market_analyzer.py:420 | [大盘] 调用大模型生成复盘报告...
+2026-04-24 11:04:03 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:3995 | 
+LiteLLM completion() model= gemini-3-flash-preview; provider = gemini
+2026-04-24 11:04:03 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py:1009 | Warning: Setting temperature < 1.0 for Gemini 3 models (gemini-3-flash-preview) can cause infinite loops, degraded reasoning performance, and failure on complex tasks. Strongly recommended to use temperature = 1.0 (default).
+2026-04-24 11:04:26 | INFO     | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/utils.py:1656 | Wrapper: Completed Call, calling success_handler
+2026-04-24 11:04:26 | INFO     | src/market_analyzer.py:425 | [大盘] 复盘报告生成成功，长度: 948 字符
+2026-04-24 11:04:26 | INFO     | src/market_analyzer.py:888 | ========== 大盘复盘分析完成 ==========
+2026-04-24 11:04:26 | INFO     | src/notification.py:1726 | 日报已保存到: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260424.md
+2026-04-24 11:04:26 | INFO     | src/core/market_review.py:118 | 大盘复盘报告已保存: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260424.md
+2026-04-24 11:04:26 | INFO     | main.py:532 | 
+任务执行完成
+2026-04-24 11:04:28 | INFO     | main.py:578 | 开始自动回测...
+2026-04-24 11:04:28 | INFO     | main.py:586 | 自动回测完成: processed=0 saved=0 completed=0 insufficient=0 errors=0
+2026-04-24 11:04:28 | INFO     | main.py:941 | 
+程序执行完成
