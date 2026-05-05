@@ -1,0 +1,52 @@
+2026-05-05 11:12:17 | INFO     | src/logging_config.py:153 | 日志系统初始化完成，日志目录: logs
+2026-05-05 11:12:17 | INFO     | src/logging_config.py:154 | 常规日志: logs/stock_analysis_20260505.log
+2026-05-05 11:12:17 | INFO     | src/logging_config.py:155 | 调试日志: logs/stock_analysis_debug_20260505.log
+2026-05-05 11:12:17 | INFO     | main.py:741 | ============================================================
+2026-05-05 11:12:17 | INFO     | main.py:742 | A股自选股智能分析系统 启动
+2026-05-05 11:12:17 | INFO     | main.py:743 | 运行时间: 2026-05-05 11:12:17
+2026-05-05 11:12:17 | INFO     | main.py:744 | ============================================================
+2026-05-05 11:12:17 | WARNING  | main.py:749 | 未配置 Tushare Token，将使用其他数据源
+2026-05-05 11:12:17 | WARNING  | main.py:749 | 未配置通知渠道，将不发送推送通知
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fc9917f21d0>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | start_tls.started ssl_context=<ssl.SSLContext object at 0x7fc9917fc0e0> server_hostname='raw.githubusercontent.com' timeout=5
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fc9917f2190>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_headers.started request=<Request [b'GET']>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_headers.complete
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_body.started request=<Request [b'GET']>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_body.complete
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_headers.started request=<Request [b'GET']>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'70869'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"ef1120bc585f7feb5925cff26b65f91abb098ee26e2a2ef53b078c06f0716850"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'51A8:1482:5B9AEB2:6B39FD3:69F43490'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Tue, 05 May 2026 11:12:17 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-bfi-krnt7300092-BFI'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'100'), (b'X-Timer', b'S1777979537.389304,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'66b80b7904c4698614e1af575a86afcc7c83c262'), (b'Expires', b'Tue, 05 May 2026 11:17:17 GMT'), (b'Source-Age', b'274')])
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_body.started request=<Request [b'GET']>
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_body.complete
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | response_closed.started
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | response_closed.complete
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | close.started
+2026-05-05 11:12:17 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | close.complete
+2026-05-05 11:12:18 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/litellm_core_utils/litellm_logging.py:199 | [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm_enterprise'
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:794 | Using AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:862 | Creating AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:876 | NEW SESSION: Creating new ClientSession (no shared session provided)
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:794 | Using AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:862 | Creating AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:876 | NEW SESSION: Creating new ClientSession (no shared session provided)
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:794 | Using AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:862 | Creating AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:876 | NEW SESSION: Creating new ClientSession (no shared session provided)
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:794 | Using AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:862 | Creating AiohttpTransport...
+2026-05-05 11:12:19 | DEBUG    | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py:876 | NEW SESSION: Creating new ClientSession (no shared session provided)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bottom_volume (bottom_volume.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: box_oscillation (box_oscillation.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bull_trend (bull_trend.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: chan_theory (chan_theory.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: dragon_head (dragon_head.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: emotion_cycle (emotion_cycle.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: ma_golden_cross (ma_golden_cross.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: one_yang_three_yin (one_yang_three_yin.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: shrink_pullback (shrink_pullback.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: volume_breakout (volume_breakout.yaml)
+2026-05-05 11:12:19 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: wave_theory (wave_theory.yaml)
+2026-05-05 11:12:21 | INFO     | main.py:431 | 今日所有相关市场均为非交易日，跳过执行。可使用 --force-run 强制执行。
+2026-05-05 11:12:21 | INFO     | main.py:941 | 
+程序执行完成
